@@ -27,12 +27,24 @@ public class Student {
         return name; 
     }
     
+    public void setName(String newName) {
+        name = newName;
+    }
+    
     public DateTime getDob() {
         return dob;
     }
     
+    public void setDob(DateTime newDob) {
+        dob = newDob;
+    }
+    
     public String getId() {
         return id;
+    }
+    
+    public void setId(String newId) {
+        id = newId;
     }
     
     public int getAge() {

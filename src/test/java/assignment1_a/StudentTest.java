@@ -29,4 +29,31 @@ public class StudentTest {
         
         assertEquals(expectedAge, student.getAge());
     }
+    
+    @Test
+    public void testSetName() {
+        String expectedName = "Tim";
+        Student student = new Student("Timmothy", new DateTime(), "id");
+        student.setName(expectedName);
+        
+        assertEquals(expectedName, student.getName());
+    }
+    
+    @Test
+    public void testSetDob() {
+        DateTime expectedDob = new DateTime(1996, 11, 21, 4, 23);
+        Student student = new Student("Tim", new DateTime(), "id");
+        student.setDob(expectedDob);
+        
+        assertEquals(expectedDob, student.getDob());
+    }
+    
+    @Test
+    public void testSetId() {
+        String expectedId = "123";
+        Student student = new Student("Tim", new DateTime(), "abc");
+        student.setId(expectedId);
+        
+        assertEquals(expectedId, student.getId());
+    }
 }
