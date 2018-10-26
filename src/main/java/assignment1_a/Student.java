@@ -5,14 +5,12 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 
 /**
- *
+ * TODO: add courses and modules getters/setters
  * @author sam
  */
 public class Student {
     private String name;
-    private int age;
     private DateTime dob;
-    private String username;
     private String id;
     private ArrayList<String> courses;
     private ArrayList<Module> modules;
@@ -54,9 +52,6 @@ public class Student {
     }
     
     public String getUsername() {
-        if (username == null) {
-            username = name + getAge();
-        }
-        return username;
+        return name + getAge();
     }
 }
