@@ -2,6 +2,7 @@ package assignment1_a;
 
 import java.util.ArrayList;
 import org.joda.time.DateTime;
+import org.joda.time.Period;
 
 /**
  *
@@ -32,5 +33,11 @@ public class Student {
     
     public String getId() {
         return id;
+    }
+    
+    public int getAge() {
+        DateTime now = new DateTime();
+        Period period = new Period(dob,now);
+        return period.getYears();
     }
 }
