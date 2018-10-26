@@ -1,6 +1,7 @@
 package assignment1_a;
 
 import java.util.ArrayList;
+import org.joda.time.DateTime;
 
 /**
  *
@@ -9,13 +10,13 @@ import java.util.ArrayList;
 public class Student {
     private String name;
     private int age;
-    private String dob;
+    private DateTime dob;
     private String username;
     private String id;
     private ArrayList<String> courses;
     private ArrayList<Module> modules;
     
-    public Student(String name, String dob, String id) {
+    public Student(String name, DateTime dob, String id) {
         this.name = name;
         this.dob = dob;
         this.id = id;
@@ -25,7 +26,7 @@ public class Student {
         return name; 
     }
     
-    public String getDob() {
+    public DateTime getDob() {
         return dob;
     }
     

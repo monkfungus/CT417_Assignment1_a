@@ -2,6 +2,7 @@ package assignment1_a;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.joda.time.DateTime;
 
 /**
  * Unit test Student
@@ -11,7 +12,7 @@ public class StudentTest {
     @Test
     public void testConstructorArguments() {
         String name = "Tim";
-        String dob = "21/12/1996";
+        DateTime dob = new DateTime(1996, 12, 21, 5, 32);
         String id = "abc123";
         
         Student student = new Student(name, dob, id);
