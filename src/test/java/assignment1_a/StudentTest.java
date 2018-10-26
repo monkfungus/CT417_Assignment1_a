@@ -56,4 +56,14 @@ public class StudentTest {
         
         assertEquals(expectedId, student.getId());
     }
+    
+    @Test 
+    public void testGetUsername() {
+        String name = "Tim";
+        DateTime dob = new DateTime(1996, 1, 1, 12, 45);
+        Student student = new Student(name, dob, "123");
+        String expectedUsername = name + student.getAge();
+        
+        assertEquals(expectedUsername, student.getUsername());
+    }
 }

@@ -52,4 +52,11 @@ public class Student {
         Period period = new Period(dob,now);
         return period.getYears();
     }
+    
+    public String getUsername() {
+        if (username == null) {
+            username = name + getAge();
+        }
+        return username;
+    }
 }
