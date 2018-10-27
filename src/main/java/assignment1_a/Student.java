@@ -6,6 +6,7 @@ import org.joda.time.Period;
 
 /**
  * TODO: add courses and modules getters/setters
+ * TODO: need to sync modules and courses and students together
  * @author sam
  */
 public class Student {
