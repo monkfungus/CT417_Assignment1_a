@@ -9,6 +9,5 @@ build:
         - mkdir -p shippable/testresults
         - mkdir -p shippable/codecoverage
 
-        - mvn clean
         - mvn test
 
