@@ -10,4 +10,5 @@ build:
         - mkdir -p shippable/codecoverage
 
         - mvn clean
+        - mvn test
 
