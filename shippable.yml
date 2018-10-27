@@ -1,0 +1,13 @@
+#### CI CONFIG
+language: java
+jdk: 
+    - openjdk7
+
+build:
+    ci:
+        # Create folders for test and code coverage
+        - mkdir -p shippable/testresults
+        - mkdir -p shippable/codecoverage
+
+        - mvn clean
+
