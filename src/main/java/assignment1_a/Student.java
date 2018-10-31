@@ -13,7 +13,7 @@ public class Student {
     private String name;
     private DateTime dob;
     private String id;
-    private ArrayList<String> courses;
+    private ArrayList<Course> courses;
     private ArrayList<Module> modules;
     
     public Student(String name, DateTime dob, String id) {
@@ -54,5 +54,21 @@ public class Student {
     
     public String getUsername() {
         return name + getAge();
+    }
+    
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+    
+    public void addCourse(Course c) {
+        courses.add(c);
+    }
+    
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
+    
+    public void addModule(Module m) {
+        modules.add(m);
     }
 }
