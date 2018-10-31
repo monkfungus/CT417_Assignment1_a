@@ -51,15 +51,31 @@ public class Course {
         return students;
     }
     
-    public void addStudent(Student s) {
-        students.add(s);
+    public void addStudent(Student newS) {
+        boolean add = true; // default
+        for (Student s : students) {
+            if (s.getUsername().equals(newS.getUsername())) {
+                add = false;
+            }
+        }
+        if (add) {
+            students.add(newS);
+        }
     }
     
     public ArrayList<Module> getModules() {
         return modules;
     }
     
-    public void addModule(Module m) {
-        modules.add(m);
+    public void addModule(Module newM) {
+        boolean add = true; // default
+        for (Module m : modules) {
+            if (m.getId().equals(newM.getId())) {
+                add = false;
+            }
+        }
+        if (add) {
+            modules.add(newM);
+        }
     }
 }

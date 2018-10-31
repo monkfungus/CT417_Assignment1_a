@@ -39,15 +39,43 @@ public class Module {
         return students;
     }
     
-    public void addStudent(Student s) {
-        students.add(s);
+    public void addStudent(Student newS) {
+        boolean add = true; // default
+        for (Student s : students) {
+            if (s.getUsername().equals(newS.getUsername())) {
+                add = false;
+            }
+        }
+        if (add) {
+            students.add(newS);
+        }
     }
     
     public ArrayList<Course> getCourses() {
         return courses;
     }
+   
+    public void addCourse(Course newC) {
+        boolean addCourse = true; // default
+        for (Course c : courses) {
+            if (c.getName().equals(newC.getName())) {
+                addCourse = false;
+            }
+        }
+        if (addCourse) {
+            courses.add(newC);
+        }
+    }
     
-    public void addCourse(Course c) {
-        courses.add(c);
+    public void removeCourse(Course rmC) {
+        boolean removeCourse = false; // default
+        for (Course c : courses) {
+            if (c.getName().equals(rmC.getName())) {
+                removeCourse = true;
+            }
+        }
+        if (removeCourse) {
+            courses.remove(rmC);
+        }
     }
 }

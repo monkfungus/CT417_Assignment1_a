@@ -58,4 +58,43 @@ public class ModuleTest {
         m.addCourse(c);
         assertEquals(1, m.getCourses().size());
     }
+    
+    @Test
+    public void testAddCourses() {
+        int expectedNumCourses = 2;
+        Course c1 = new Course("ECE", new DateTime(), new DateTime());
+        Course c2 = new Course("EEE", new DateTime(), new DateTime());
+        Module m = new Module("CS101", "123");
+        
+        m.addCourse(c1);
+        m.addCourse(c2);
+        
+        assertEquals(expectedNumCourses, m.getCourses().size());
+    }
+    
+    @Test
+    public void testAddDuplicateCourse() {
+        int expectedNumCourses = 1;
+        Course c = new Course("ECE", new DateTime(), new DateTime());
+        Module m = new Module("CS101", "123");
+        
+        m.addCourse(c);
+        m.addCourse(c);
+        
+        assertEquals(expectedNumCourses, m.getCourses().size());
+    }
+    
+    @Test
+    public void testRemoveCourse() {
+        int expectedNumCourses = 1;
+        Course c1 = new Course("ECE", new DateTime(), new DateTime());
+        Course c2 = new Course("EEE", new DateTime(), new DateTime());
+        Module m = new Module("CS101", "123");
+        
+        m.addCourse(c1);
+        m.addCourse(c2);
+        m.removeCourse(c2);
+        
+        assertEquals(expectedNumCourses, m.getCourses().size());
+    }
 }
