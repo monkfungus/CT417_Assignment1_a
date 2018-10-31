@@ -20,6 +20,8 @@ public class Student {
         this.name = name;
         this.dob = dob;
         this.id = id;
+        courses = new ArrayList<Course>();
+        modules = new ArrayList<Module>();
     }
     
     public String getName() {
@@ -60,15 +62,55 @@ public class Student {
         return courses;
     }
     
-    public void addCourse(Course c) {
-        courses.add(c);
+    public void addCourse(Course newC) {
+        boolean addCourse = true; // default
+        for (Course c : courses) {
+            if (c.getName().equals(newC.getName())) {
+                addCourse = false;
+            }
+        }
+        if (addCourse) {
+            courses.add(newC);
+        }
+    }
+    
+    public void removeCourse(Course rmC) {
+        boolean removeCourse = false; // default
+        for (Course c : courses) {
+            if (c.getName().equals(rmC.getName())) {
+                removeCourse = true;
+            }
+        }
+        if (removeCourse) {
+            courses.remove(rmC);
+        }
     }
     
     public ArrayList<Module> getModules() {
         return modules;
     }
     
-    public void addModule(Module m) {
-        modules.add(m);
+    public void addModule(Module newM) {
+        boolean add = true; // default
+        for (Module m : modules) {
+            if (m.getId().equals(newM.getId())) {
+                add = false;
+            }
+        }
+        if (add) {
+            modules.add(newM);
+        }
+    }
+    
+    public void removeModule(Module toRm) {
+        boolean rm = false; // default
+        for (Module m : modules) {
+            if (m.getId().equals(toRm.getId())) {
+                rm = true;
+            }
+        }
+        if (rm) {
+            modules.remove(toRm);
+        }
     }
 }
